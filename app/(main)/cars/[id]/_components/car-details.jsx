@@ -135,7 +135,7 @@ export function CarDetails({ car, testDriveInfo }) {
               {car.images.map((image, index) => (
                 <div
                   key={index}
-                  className={`relative cursor-pointer rounded-md h-20 w-24 flex-shrink-0 transition ${index === currentImageIndex
+                  className={`relative cursor-pointer rounded-md h-20 w-24 shrink-0 transition ${index === currentImageIndex
                     ? "border-2 border-blue-600"
                     : "opacity-70 hover:opacity-100"
                     }`}
@@ -379,7 +379,7 @@ export function CarDetails({ car, testDriveInfo }) {
           <div className="flex flex-col md:flex-row gap-6 justify-between">
             {/* Dealership Name and Address */}
             <div className="flex items-start gap-3">
-              <LocateFixed className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
+              <LocateFixed className="h-5 w-5 text-blue-600 mt-1 shrink-0" />
               <div>
                 <h4 className="font-medium">CarMart Motors</h4>
                 <p className="text-gray-400">
