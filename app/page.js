@@ -37,7 +37,7 @@ export default async function Home() {
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-orange-500/5 to-amber-500/5 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-linear-to-r from-orange-500/5 to-amber-500/5 rounded-full blur-3xl animate-pulse" />
           <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-orange-500/40 rounded-full animate-pulse" />
           <div
             className="absolute top-1/3 left-1/4 w-1.5 h-1.5 bg-amber-400/30 rounded-full animate-pulse"
@@ -229,7 +229,7 @@ export default async function Home() {
                 Why Choose CarMart
               </h2>
               <p className="text-gray-500 max-w-2xl mx-auto">
-                We're revolutionizing the way you buy and sell cars with
+                We&apos;re revolutionizing the way you buy and sell cars with
                 cutting-edge technology
               </p>
             </div>
@@ -237,7 +237,7 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ScrollReveal direction="up" delay={100}>
               <div className="glass-card p-8 text-center glass-hover">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500/20 to-amber-500/20 flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-orange-500/20 to-amber-500/20 flex items-center justify-center mx-auto mb-6">
                   <Car className="h-8 w-8 text-orange-400" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">
@@ -251,7 +251,7 @@ export default async function Home() {
             </ScrollReveal>
             <ScrollReveal direction="up" delay={200}>
               <div className="glass-card p-8 text-center glass-hover">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500/20 to-amber-500/20 flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-orange-500/20 to-amber-500/20 flex items-center justify-center mx-auto mb-6">
                   <Calendar className="h-8 w-8 text-orange-400" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">
@@ -265,7 +265,7 @@ export default async function Home() {
             </ScrollReveal>
             <ScrollReveal direction="up" delay={300}>
               <div className="glass-card p-8 text-center glass-hover">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500/20 to-amber-500/20 flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-orange-500/20 to-amber-500/20 flex items-center justify-center mx-auto mb-6">
                   <Shield className="h-8 w-8 text-orange-400" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">
@@ -323,7 +323,7 @@ export default async function Home() {
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent" />
                     <div className="absolute inset-0 border border-white/10 rounded-2xl group-hover:border-orange-500/50 transition-colors" />
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-5">
@@ -380,7 +380,7 @@ export default async function Home() {
       <section className="py-20 relative overflow-hidden grid-pattern">
         <div className="absolute inset-0 hero-gradient" />
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-orange-500/10 rounded-full blur-3xl" />
         </div>
         <div className="container mx-auto px-4 text-center relative">
           <ScrollReveal direction="up">
@@ -399,7 +399,7 @@ export default async function Home() {
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-6 text-lg rounded-xl"
+                className="bg-linear-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-6 text-lg rounded-xl"
                 asChild
               >
                 <Link href="/cars">Browse All Cars</Link>
@@ -424,7 +424,7 @@ export default async function Home() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
               <div>
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-linear-to-br from-orange-500 to-amber-500 flex items-center justify-center">
                     <Car className="h-5 w-5 text-white" />
                   </div>
                   <span className="text-xl font-bold text-white">CarMart</span>
