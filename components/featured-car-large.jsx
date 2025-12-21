@@ -8,22 +8,22 @@ export function FeaturedCarLarge({ car }) {
   return (
     <div className="glass-card overflow-hidden group glass-hover h-full flex flex-col">
       {/* Image Container - Large */}
-      <div className="relative h-72 lg:h-[700px] overflow-hidden">
+      <div className="relative h-72 lg:h-175 overflow-hidden">
         <Image
           src={car.images[0] || "/placeholder.svg"}
           alt={`${car.year} ${car.make} ${car.model}`}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-700"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black via-black/30 to-transparent" />
 
         {/* Top Row */}
         <div className="absolute top-5 left-5 right-5 flex justify-between items-start">
-          <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-white text-sm font-semibold">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-linear-to-r from-orange-500 to-amber-500 text-white text-sm font-semibold">
             <Star className="h-4 w-4 fill-white" />
             Top Pick
           </div>
-          <button className="w-12 h-12 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+          <button className="w-12 h-12 rounded-full  backdrop-blur-sm flex items-center justify-center bg-orange-500 transition-all duration-300">
             <Heart className="h-6 w-6 text-white" />
           </button>
         </div>
@@ -73,13 +73,14 @@ export function FeaturedCarLarge({ car }) {
         <div className="mt-auto flex gap-4">
           <Link
             href={`/cars/${car.id}`}
-            className="flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold transition-all duration-300 group/link"
+            className="flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-linear-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold transition-all duration-300 group/link"
           >
             <span>View Details</span>
             <ArrowRight className="h-5 w-5 group-hover/link:translate-x-1 transition-transform" />
           </Link>
           <button className="px-6 py-4 rounded-xl border border-white/20 text-white hover:bg-white/10 font-semibold transition-all duration-300">
-            Schedule Test Drive
+            <Link href={`/test-drive/${car.id}`}>Schedule Test Drive</Link>
+
           </button>
         </div>
       </div>

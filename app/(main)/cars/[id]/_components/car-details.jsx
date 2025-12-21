@@ -81,7 +81,7 @@ export function CarDetails({ car, testDriveInfo }) {
       navigator
         .share({
           title: `${car.year} ${car.make} ${car.model}`,
-          text: `Check out this ${car.year} ${car.make} ${car.model} on Vehiql!`,
+          text: `Check out this ${car.year} ${car.make} ${car.model} on CarMart!`,
           url: window.location.href,
         })
         .catch((error) => {
@@ -135,18 +135,16 @@ export function CarDetails({ car, testDriveInfo }) {
               {car.images.map((image, index) => (
                 <div
                   key={index}
-                  className={`relative cursor-pointer rounded-md h-20 w-24 flex-shrink-0 transition ${
-                    index === currentImageIndex
-                      ? "border-2 border-blue-600"
-                      : "opacity-70 hover:opacity-100"
-                  }`}
+                  className={`relative cursor-pointer rounded-md h-20 w-24 flex-shrink-0 transition ${index === currentImageIndex
+                    ? "border-2 border-blue-600"
+                    : "opacity-70 hover:opacity-100"
+                    }`}
                   onClick={() => setCurrentImageIndex(index)}
                 >
                   <Image
                     src={image}
-                    alt={`${car.year} ${car.make} ${car.model} - view ${
-                      index + 1
-                    }`}
+                    alt={`${car.year} ${car.make} ${car.model} - view ${index + 1
+                      }`}
                     fill
                     className="object-cover"
                   />
@@ -159,9 +157,8 @@ export function CarDetails({ car, testDriveInfo }) {
           <div className="flex mt-4 gap-4">
             <Button
               variant="outline"
-              className={`flex items-center gap-2 flex-1 ${
-                isWishlisted ? "text-red-500" : ""
-              }`}
+              className={`flex items-center gap-2 flex-1 ${isWishlisted ? "text-red-500" : ""
+                }`}
               onClick={handleSaveCar}
               disabled={savingCar}
             >
@@ -219,14 +216,14 @@ export function CarDetails({ car, testDriveInfo }) {
                     <Currency className="h-5 w-5 text-blue-600" />
                     <h3>EMI Calculator</h3>
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-gray-400">
                     Estimated Monthly Payment:{" "}
-                    <span className="font-bold text-gray-900">
+                    <span className="font-bold text-gray-100">
                       {formatCurrency(car.price / 60)}
                     </span>{" "}
                     for 60 months
                   </div>
-                  <div className="text-xs text-gray-500 mt-1">
+                  <div className="text-xs text-gray-400 mt-1">
                     *Based on $0 down payment and 4.5% interest rate
                   </div>
                 </CardContent>
@@ -234,7 +231,7 @@ export function CarDetails({ car, testDriveInfo }) {
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>Vehiql Car Loan Calculator</DialogTitle>
+                <DialogTitle>CarMart Car Loan Calculator</DialogTitle>
                 <EmiCalculator price={car.price} />
               </DialogHeader>
             </DialogContent>
@@ -247,11 +244,11 @@ export function CarDetails({ car, testDriveInfo }) {
                 <MessageSquare className="h-5 w-5 text-blue-600" />
                 <h3>Have Questions?</h3>
               </div>
-              <p className="text-sm text-gray-600 mb-3">
+              <p className="text-sm text-gray-400 mb-3">
                 Our representatives are available to answer all your queries
                 about this vehicle.
               </p>
-              <a href="mailto:help@vehiql.in">
+              <a href="mailto:help@carmart.in">
                 <Button variant="outline" className="w-full">
                   Request Info
                 </Button>
@@ -278,9 +275,9 @@ export function CarDetails({ car, testDriveInfo }) {
               <Calendar className="mr-2 h-5 w-5" />
               {testDriveInfo.userTestDrive
                 ? `Booked for ${format(
-                    new Date(testDriveInfo.userTestDrive.bookingDate),
-                    "EEEE, MMMM d, yyyy"
-                  )}`
+                  new Date(testDriveInfo.userTestDrive.bookingDate),
+                  "EEEE, MMMM d, yyyy"
+                )}`
                 : "Book Test Drive"}
             </Button>
           )}
@@ -288,11 +285,11 @@ export function CarDetails({ car, testDriveInfo }) {
       </div>
 
       {/* Details & Features Section */}
-      <div className="mt-12 p-6 bg-white rounded-lg shadow-sm">
+      <div className="mt-12 p-6 border rounded-lg shadow-sm">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h3 className="text-2xl font-bold mb-6">Description</h3>
-            <p className="whitespace-pre-line text-gray-700">
+            <h3 className=" text-2xl font-bold mb-6">Description</h3>
+            <p className="whitespace-pre-line  text-gray-400">
               {car.description}
             </p>
           </div>
@@ -327,47 +324,47 @@ export function CarDetails({ car, testDriveInfo }) {
       </div>
 
       {/* Specifications Section */}
-      <div className="mt-8 p-6 bg-white rounded-lg shadow-sm">
+      <div className="mt-8 p-6 border rounded-lg shadow-sm">
         <h2 className="text-2xl font-bold mb-6">Specifications</h2>
-        <div className="bg-gray-50 rounded-lg p-6">
+        <div className="rounded-lg border p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
             <div className="flex justify-between py-2 border-b">
-              <span className="text-gray-600">Make</span>
+              <span className="text-gray-400">Make</span>
               <span className="font-medium">{car.make}</span>
             </div>
             <div className="flex justify-between py-2 border-b">
-              <span className="text-gray-600">Model</span>
+              <span className="text-gray-400">Model</span>
               <span className="font-medium">{car.model}</span>
             </div>
             <div className="flex justify-between py-2 border-b">
-              <span className="text-gray-600">Year</span>
+              <span className="text-gray-400">Year</span>
               <span className="font-medium">{car.year}</span>
             </div>
             <div className="flex justify-between py-2 border-b">
-              <span className="text-gray-600">Body Type</span>
+              <span className="text-gray-400">Body Type</span>
               <span className="font-medium">{car.bodyType}</span>
             </div>
             <div className="flex justify-between py-2 border-b">
-              <span className="text-gray-600">Fuel Type</span>
+              <span className="text-gray-400">Fuel Type</span>
               <span className="font-medium">{car.fuelType}</span>
             </div>
             <div className="flex justify-between py-2 border-b">
-              <span className="text-gray-600">Transmission</span>
+              <span className="text-gray-400">Transmission</span>
               <span className="font-medium">{car.transmission}</span>
             </div>
             <div className="flex justify-between py-2 border-b">
-              <span className="text-gray-600">Mileage</span>
+              <span className="text-gray-400">Mileage</span>
               <span className="font-medium">
                 {car.mileage.toLocaleString()} miles
               </span>
             </div>
             <div className="flex justify-between py-2 border-b">
-              <span className="text-gray-600">Color</span>
+              <span className="text-gray-400">Color</span>
               <span className="font-medium">{car.color}</span>
             </div>
             {car.seats && (
               <div className="flex justify-between py-2 border-b">
-                <span className="text-gray-600">Seats</span>
+                <span className="text-gray-400">Seats</span>
                 <span className="font-medium">{car.seats}</span>
               </div>
             )}
@@ -376,22 +373,22 @@ export function CarDetails({ car, testDriveInfo }) {
       </div>
 
       {/* Dealership Location Section */}
-      <div className="mt-8 p-6 bg-white rounded-lg shadow-sm">
+      <div className="mt-8 p-6 border rounded-lg shadow-sm">
         <h2 className="text-2xl font-bold mb-6">Dealership Location</h2>
-        <div className="bg-gray-50 rounded-lg p-6">
+        <div className="border rounded-lg p-6">
           <div className="flex flex-col md:flex-row gap-6 justify-between">
             {/* Dealership Name and Address */}
             <div className="flex items-start gap-3">
               <LocateFixed className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
               <div>
-                <h4 className="font-medium">Vehiql Motors</h4>
-                <p className="text-gray-600">
+                <h4 className="font-medium">CarMart Motors</h4>
+                <p className="text-gray-400">
                   {testDriveInfo.dealership?.address || "Not Available"}
                 </p>
-                <p className="text-gray-600 mt-1">
+                <p className="text-gray-400 mt-1">
                   Phone: {testDriveInfo.dealership?.phone || "Not Available"}
                 </p>
-                <p className="text-gray-600">
+                <p className="text-gray-400">
                   Email: {testDriveInfo.dealership?.email || "Not Available"}
                 </p>
               </div>
@@ -403,57 +400,57 @@ export function CarDetails({ car, testDriveInfo }) {
               <div className="space-y-2">
                 {testDriveInfo.dealership?.workingHours
                   ? testDriveInfo.dealership.workingHours
-                      .sort((a, b) => {
-                        const days = [
-                          "MONDAY",
-                          "TUESDAY",
-                          "WEDNESDAY",
-                          "THURSDAY",
-                          "FRIDAY",
-                          "SATURDAY",
-                          "SUNDAY",
-                        ];
-                        return (
-                          days.indexOf(a.dayOfWeek) - days.indexOf(b.dayOfWeek)
-                        );
-                      })
-                      .map((day) => (
-                        <div
-                          key={day.dayOfWeek}
-                          className="flex justify-between text-sm"
-                        >
-                          <span className="text-gray-600">
-                            {day.dayOfWeek.charAt(0) +
-                              day.dayOfWeek.slice(1).toLowerCase()}
-                          </span>
-                          <span>
-                            {day.isOpen
-                              ? `${day.openTime} - ${day.closeTime}`
-                              : "Closed"}
-                          </span>
-                        </div>
-                      ))
-                  : // Default hours if none provided
-                    [
-                      "Monday",
-                      "Tuesday",
-                      "Wednesday",
-                      "Thursday",
-                      "Friday",
-                      "Saturday",
-                      "Sunday",
-                    ].map((day, index) => (
-                      <div key={day} className="flex justify-between text-sm">
-                        <span className="text-gray-600">{day}</span>
+                    .sort((a, b) => {
+                      const days = [
+                        "MONDAY",
+                        "TUESDAY",
+                        "WEDNESDAY",
+                        "THURSDAY",
+                        "FRIDAY",
+                        "SATURDAY",
+                        "SUNDAY",
+                      ];
+                      return (
+                        days.indexOf(a.dayOfWeek) - days.indexOf(b.dayOfWeek)
+                      );
+                    })
+                    .map((day) => (
+                      <div
+                        key={day.dayOfWeek}
+                        className="flex justify-between text-sm"
+                      >
+                        <span className="text-gray-400">
+                          {day.dayOfWeek.charAt(0) +
+                            day.dayOfWeek.slice(1).toLowerCase()}
+                        </span>
                         <span>
-                          {index < 5
-                            ? "9:00 - 18:00"
-                            : index === 5
-                            ? "10:00 - 16:00"
+                          {day.isOpen
+                            ? `${day.openTime} - ${day.closeTime}`
                             : "Closed"}
                         </span>
                       </div>
-                    ))}
+                    ))
+                  : // Default hours if none provided
+                  [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday",
+                  ].map((day, index) => (
+                    <div key={day} className="flex justify-between text-sm">
+                      <span className="text-gray-600">{day}</span>
+                      <span>
+                        {index < 5
+                          ? "9:00 - 18:00"
+                          : index === 5
+                            ? "10:00 - 16:00"
+                            : "Closed"}
+                      </span>
+                    </div>
+                  ))}
               </div>
             </div>
           </div>

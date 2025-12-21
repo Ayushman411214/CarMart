@@ -41,7 +41,7 @@ export default function HeaderClient({ isAdmin, isAdminPage }) {
         <div className="flex items-center justify-between h-16">
           {/* LOGO / NAME (Design priority) */}
           <Link href={isAdminPage ? "/admin" : "/"} className="flex items-center gap-3">
-            <span className="text-xl font-bold text-white"><Link href={"/"}>CarMart</Link></span>
+            <span className="text-xl font-bold text-white">CarMart</span>
             {isAdminPage && (
               <span className="text-xs text-orange-400">admin</span>
             )}
@@ -50,11 +50,11 @@ export default function HeaderClient({ isAdmin, isAdminPage }) {
           {/* DESKTOP NAV */}
           {!isAdminPage && (
             <nav className="hidden md:flex items-center gap-8">
+              <Link href="/" className="text-gray-400 hover:text-white">
+                Home
+              </Link>
               <Link href="/cars" className="text-gray-400 hover:text-white">
                 Browse Cars
-              </Link>
-              <Link href="/sell" className="text-gray-400 hover:text-white">
-                Sell Your Car
               </Link>
               <Link href="/about" className="text-gray-400 hover:text-white">
                 About
